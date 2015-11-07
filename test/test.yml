@@ -1,5 +1,4 @@
 #Reused from ansible-lint/examples.
-#TODO: add more
 ---
 - hosts: webservers
 

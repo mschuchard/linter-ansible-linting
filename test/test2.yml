@@ -1,0 +1,10 @@
+#Reused from ansible-lint/examples/nomatches.yml.
+---
+- hosts: whatever
+
+  tasks:
+    - name: hello world
+      action: debug msg="Hello!"
+
+    - name: this should be fine too
+      action: file state=touch ./wherever

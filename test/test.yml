@@ -4,23 +4,17 @@
 
   vars:
     oldskool: "1.2.3"
-    bracket: "and close bracket"
+    bracket: "and close bracket" 
 
   tasks:
   - name: blah
     action: debug oops a missing {{bracket}
 
   - name: git check
-    action: git a=b c=d
-
-  - name: git check 2
     action: git version=HEAD c=d
-
-  - name: executing git through command
-    action: command git clone blah
 
   - name: executing git through command
     action: command chdir=bobbins creates=whatever /usr/bin/git clone blah
 
   - name: executing mercurial through command
-    action: command hg clone foo
+    action: hg clone foo

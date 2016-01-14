@@ -7,5 +7,5 @@ Linter-Ansible-Linting aims to provide working and robust Ansible linting functi
 Ansible-Lint >= 2.1.0 (because of the pep8 parseable output argument) is required to be installed (preferably from a package or a pip) before using this.  The 'linter' atom package is also required but should be automatically installed as a dependency thanks to steelbrain's package-deps.
 
 ### Usage
-- Ansible-Lint also parses includes when linting.  This could potentially cause some bizarre output.
+- Ansible-Lint also parses includes when linting.  This throws ansible-lint stack trace errors for missing includes and incorrect lines will be displayed for warnings resulting from included files.
 - Adding any one nonexistent rules directory to the custom rules directories array will cause ansible-lint to not function.

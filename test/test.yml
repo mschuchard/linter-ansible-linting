@@ -1,20 +1,31 @@
 #Reused from ansible-lint/examples.
 ---
 - hosts: webservers
+#ANSIBLE0008
+- sudo_user: root
 
   vars:
     oldskool: "1.2.3"
     bracket: "and close bracket"
 
   tasks:
-  - name: blah
+  - name: ANSIBLE0003
     action: debug oops a missing {{bracket}
 
-  - name: git version check
+  - name: ANSIBLE0004
     action: git version=HEAD c=d
 
-  - name: executing git through command
+  - name: ANSIBLE0006
     action: command chdir=bobbins creates=whatever /usr/bin/git clone blah
 
-  - name: mercurial version check
+  - name: ANSIBLE0005
     action: hg clone foo
+
+  #ANSIBLE0006 without name has row number issue
+  - command: unzip foo.zip
+
+  - name: ANSIBLE0007
+    command: /bin/mkdir /path/to/dir
+
+  - name: ANSIBLE0009
+    file: path=/path/to/file mode=123

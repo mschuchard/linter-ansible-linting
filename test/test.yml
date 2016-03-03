@@ -5,7 +5,6 @@
 - sudo_user: root
 
   vars:
-    oldskool: "1.2.3"
     bracket: "and close bracket"
 
   tasks:
@@ -21,7 +20,7 @@
   - name: ANSIBLE0005
     action: hg clone foo
 
-  #ANSIBLE0006 without name has row number issue
+  #un-named module invocation
   - command: unzip foo.zip
 
   - name: ANSIBLE0007

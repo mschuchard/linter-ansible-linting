@@ -107,7 +107,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[6].range.length).toBeDefined();
           expect(messages[6].range.length).toEqual(2);
           expect(messages[6].range).toEqual([[0, 0], [0, 32]]);
-          //add in octal permission when it starts working in ansible-lint
+          //TODO: add in octal permission when it starts working in ansible-lint
         });
       });
     });

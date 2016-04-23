@@ -1,0 +1,6 @@
+#Missing include for error handling
+---
+- hosts: whatever
+
+  tasks:
+    - include: foo

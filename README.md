@@ -1,12 +1,11 @@
 ![Preview](https://raw.githubusercontent.com/mschuchard/linter-ansible-linting/master/linter_ansible_linting.png)
 
 ### linter-ansible-linting
-Linter-Ansible-Linting aims to provide functional and robust Ansible linting functionality within Atom.  Adapted from my other linter plugin 'linter-puppet-parsing'.
+`Linter-Ansible-Linting` aims to provide functional and robust `Ansible` linting functionality within Atom. Adapted from my other linter plugin `linter-puppet-parsing`.
 
 ### Installation
-Ansible-Lint >= 2.1.0 (because of the pep8 parseable output argument) is required to be installed (preferably from a package or a pip) before using this.  The 'linter' atom package is also required but should be automatically installed as a dependency thanks to steelbrain's package-deps.
+`Ansible-Lint >= 2.1.0` (because of the pep8 parseable output argument) is required to be installed (preferably from a package or a pip) before using this. `Ansible-Lint >= 2.5.0` (because of enhanced handling of include and role issues) is recommended to be installed. The `linter` and `language-ansible` Atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.
 
 ### Usage
-- Ansible-Lint also parses includes when linting.  This throws ansible-lint stack trace errors for missing includes and incorrect lines will be displayed for warnings resulting from included files.
-- Adding any one nonexistent rules directory to the custom rules directories array will cause ansible-lint to not function.
-- The Rule 9 skip (octal permissions) will not work until a release of ansible-lint > 2.3.8 is distributed as it is dual assigned to Rule 8 in previous versions.  A PR has already been approved which fixes this, but a release with this PR will be in > 2.3.8.
+- `Ansible-Lint` will ordinarily attempt to lint includes and roles. Missing includes and roles will be displayed by the linter as a warning and missing roles will throw a clean error to your Atom display notifications. Syntax errors in includes and roles will be caught and and a notification displayed via the linter. Linter warnings from includes and roles may display strangely or throw out-of-bounds type errors which will error silently. Therefore, reasonably responsible behavior is recommended with this linter as there are numerous unusual situations I either cannot fully compensate for or expect.
+- Adding any one nonexistent rules directory to the custom rules directories array will cause `ansible-lint` to not function.

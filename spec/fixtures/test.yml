@@ -18,7 +18,7 @@
     action: command chdir=bobbins creates=whatever /usr/bin/git clone blah
 
   - name: ANSIBLE0005
-    action: hg clone foo
+    action: command hg clone foo
 
   #un-named module invocation
   - command: unzip foo.zip

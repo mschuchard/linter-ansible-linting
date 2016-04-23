@@ -3,11 +3,8 @@
 - hosts: whatever
 
   tasks:
-    #this does not exist and the linter should ignore its resulting Python IOError
-    - include: foo
-
     - name: hello world
       action: debug msg="Hello!"
 
     - name: this should be fine too
-      action: file state=touch ./wherever
+      action: file state=touch path=./wherever

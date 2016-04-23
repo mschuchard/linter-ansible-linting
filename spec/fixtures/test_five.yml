@@ -1,0 +1,6 @@
+#Attempt to include directory for error handling
+---
+- hosts: whatever
+
+  tasks:
+    - include: ../fixtures

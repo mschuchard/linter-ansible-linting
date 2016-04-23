@@ -1,0 +1,7 @@
+#Syntax error for error handling
+---
+- hosts: whatever
+
+  tasks:
+    - name: this should be fine too
+      action: file state=touch ./wherever

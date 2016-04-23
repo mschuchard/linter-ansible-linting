@@ -113,6 +113,8 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
+  //TODO: add test three, four, five
+
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {
       const goodFile = path.join(__dirname, 'fixtures', 'test_two.yml');

@@ -80,7 +80,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[4].type).toBeDefined();
           expect(messages[4].type).toEqual('Warning');
           expect(messages[4].text).toBeDefined();
-          expect(messages[4].text).toEqual('mismatched braces');
+          expect(messages[4].text).toEqual('mkdir used in place of argument state=directory to file module');
           expect(messages[4].filePath).toBeDefined();
           expect(messages[4].filePath).toMatch(/.+test\.yml$/);
           expect(messages[4].range).toBeDefined();
@@ -90,7 +90,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[5].type).toBeDefined();
           expect(messages[5].type).toEqual('Warning');
           expect(messages[5].text).toBeDefined();
-          expect(messages[5].text).toEqual('mkdir used in place of argument state=directory to file module');
+          expect(messages[5].text).toEqual('deprecated sudo_user feature');
           expect(messages[5].filePath).toBeDefined();
           expect(messages[5].filePath).toMatch(/.+test\.yml$/);
           expect(messages[5].range).toBeDefined();
@@ -100,20 +100,19 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[6].type).toBeDefined();
           expect(messages[6].type).toEqual('Warning');
           expect(messages[6].text).toBeDefined();
-          expect(messages[6].text).toEqual('deprecated sudo_user feature');
+          expect(messages[6].text).toEqual('Octal file permissions must contain leading zero');
           expect(messages[6].filePath).toBeDefined();
           expect(messages[6].filePath).toMatch(/.+test\.yml$/);
           expect(messages[6].range).toBeDefined();
           expect(messages[6].range.length).toBeDefined();
           expect(messages[6].range.length).toEqual(2);
           expect(messages[6].range).toEqual([[0, 0], [0, 32]]);
-          //TODO: add in octal permission when it starts working in ansible-lint
         });
       });
     });
   });
 
-  //TODO: add test three, four, five
+  //TODO: add test three, four, five, six
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {

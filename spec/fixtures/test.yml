@@ -8,9 +8,6 @@
     bracket: "and close bracket"
 
   tasks:
-  - name: ANSIBLE0003
-    action: debug oops a missing {{bracket}}
-
   - name: ANSIBLE0004
     action: git version=HEAD c=d
 

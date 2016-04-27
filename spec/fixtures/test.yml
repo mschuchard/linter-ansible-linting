@@ -1,11 +1,8 @@
-#Reused from ansible-lint/examples.
+#Edited from ansible-lint/examples.
 ---
 - hosts: webservers
 #ANSIBLE0008
 - sudo_user: root
-
-  vars:
-    bracket: "and close bracket"
 
   tasks:
   - name: ANSIBLE0004

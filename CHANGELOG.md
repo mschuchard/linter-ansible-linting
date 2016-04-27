@@ -1,3 +1,12 @@
+### 1.1.2
+- Updated atom-linter dependency.
+- Added capability to lint all yaml files.
+- Fixed issue where skip ANSIBLE0008 and ANSIBLE0009 were being ignored in code.
+- Added error catching for a variety of `ansible-lint` errors thrown because of issues with linted playbooks.
+- ANSIBLE0003 skip removed.
+- Automatic check for `ansible-lint >= 2.1.0` installed in path.
+- Minor code optimization.
+
 ### 1.1.1
 - Updated atom-linter dependencies.
 - Minor code cleanup and optimization.

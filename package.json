@@ -1,7 +1,7 @@
 {
   "name": "linter-ansible-linting",
   "main": "./lib/main",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ansible linting via ansible-lint",
   "repository": "https://github.com/mschuchard/linter-ansible-linting",
   "license": "MIT",
@@ -20,7 +20,7 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "atom-linter": "^4.6.1",
+    "atom-linter": "^4.7.0",
     "atom-package-deps": "^3.0.9"
   },
   "package-deps": [

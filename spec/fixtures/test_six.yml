@@ -1,6 +1,0 @@
-#Missing role for error handling
----
-- hosts: whatever
-
-  roles:
-    - foo

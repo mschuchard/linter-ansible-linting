@@ -112,7 +112,116 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  //TODO: add test three, four, five, six
+  describe('checks a file with multiple issues and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'test_three.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toBeGreaterThan(0);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toEqual('This file, an include, or role has a syntax error. Please fix before continuing linter use');
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+test_three\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with multiple issues and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'test_four.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toBeGreaterThan(0);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toMatch(/Missing file/);
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+test_four\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with multiple issues and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'test_five.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toBeGreaterThan(0);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toMatch(/Unreadable or not file/);
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+test_five\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {

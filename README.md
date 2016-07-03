@@ -4,7 +4,7 @@
 `Linter-Ansible-Linting` aims to provide functional and robust `Ansible` linting functionality within Atom.
 
 ### Installation
-`Ansible-Lint >= 2.5.0` (because of the pep8 parseable output argument, enhanced handling of include and role issues, and the removal of ANSIBLE0003) is required to be installed (preferably from a package or a pip) before using this. `Ansible-Lint >= 3.0.1` is recommended to be installed. The `Linter` and `Language-Ansible` Atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.
+`Ansible-Lint >= 2.5.0` (because of the pep8 parseable output argument, enhanced handling of include and role issues, `-R` argument, and the removal of ANSIBLE0003) is required to be installed (preferably from a package or a pip) before using this. `Ansible-Lint >= 3.0.1` is recommended to be installed. The `Linter` and `Language-Ansible` Atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.
 
 ### Usage
 - `Ansible-Lint` will ordinarily attempt to lint includes and roles. Missing includes and roles will throw a clean error to your `Atom-Linter` display notifications. Syntax errors in the current file, includes, and roles will be caught and and a notification displayed via the linter. Linter warnings from includes and roles may display strangely. Therefore, reasonably responsible behavior is recommended with this linter as there are unusual situations I either cannot fully compensate for or expect.

@@ -4,4 +4,4 @@
 
   tasks:
     - name: this should be fine too
-      action: file state=touch ./wherever
+      file: state=touch ./wherever

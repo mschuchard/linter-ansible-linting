@@ -1,3 +1,11 @@
+### 1.2.0
+- Required `ansible-lint` version bumped from `2.1.0` to `2.5.0`.
+- Updated atom-linter dependency.
+- Improved error catching, especially on syntax error output thrown from recent versions of Ansible.
+- Code, config page, and linting display cleanup, which also delivered very minor linter package speedup.
+- ANSIBLE0010-0015 skips added.
+- 'Additionally use default rules' option added.
+
 ### 1.1.2
 - Updated atom-linter dependency.
 - Added capability to lint all yaml files.

@@ -8,17 +8,17 @@
   - name: ANSIBLE0004
     action: git version=HEAD c=d
 
-  - name: ANSIBLE0006
-    action: command chdir=bobbins creates=whatever /usr/bin/git clone blah
+  - name: ANSIBLE0006 and ANSIBLE0012
+    action: command chdir=bobbins /usr/bin/git clone blah
 
-  - name: ANSIBLE0005 and ANSIBLE0012
-    action: command hg clone foo
+  - name: ANSIBLE0005
+    hg: repo=https://bitbucket.org/user/repo1 dest=/home/user/repo1
 
   #ANSIBLE0011 and ANSIBLE0013
   - shell: echo hello creates=/foo
 
-  - name: ANSIBLE0007 and ANSIBLE0014
-    command: HOME=/foo /bin/mkdir /path/to/dir creates=/path/to/dir
+  - name: ANSIBLE0007
+    command: /bin/mkdir /path/to/dir creates=/path/to/dir
 
   - name: ANSIBLE0009
     file: path=/path/to/file mode=123
@@ -26,3 +26,6 @@
   - name: ANSIBLE0010 and ANSIBLE0015
     yum: name=ansible state=latest
     with_items: items
+
+  - name: ANSIBLE0014
+    command: HOME=/foo /bin/echo 'hello world' creates=world

@@ -152,7 +152,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file with multiple issues and', () => {
+  describe('checks a file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'test_three.yml');
     beforeEach(() => {
@@ -189,7 +189,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file with multiple issues and', () => {
+  describe('checks a file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'test_four.yml');
     beforeEach(() => {
@@ -226,7 +226,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file with multiple issues and', () => {
+  describe('checks a file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'test_five.yml');
     beforeEach(() => {
@@ -254,6 +254,43 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].text).toMatch(/Unreadable or not file/);
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+test_five\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file that would throw an error and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'test_six.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toBeGreaterThan(0);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toEqual('An include or role has a linting issue which cannot display for this file. Please fix before continuing linter use');
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+test_six\.yml$/);
           expect(messages[0].range).toBeDefined();
           expect(messages[0].range.length).toBeDefined();
           expect(messages[0].range.length).toEqual(2);

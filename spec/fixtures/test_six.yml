@@ -1,0 +1,6 @@
+#Out of bounds linting warning for error handling
+---
+- hosts: whatever
+
+  tasks:
+    - include: issues.yml

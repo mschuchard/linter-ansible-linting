@@ -2,7 +2,7 @@
 ---
 - hosts: webservers
 #ANSIBLE0008
-- sudo_user: root
+  sudo_user: root
 
   tasks:
   - name: ANSIBLE0004

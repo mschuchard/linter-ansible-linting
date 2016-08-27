@@ -1,3 +1,8 @@
+### Next (Roadmap)
+- travisci
+- jasmine babel
+- workaround for directly linting roles and includes
+
 ### 1.2.0
 - Required `ansible-lint` version bumped from `2.1.0` to `2.5.0`.
 - Updated atom-linter dependency.

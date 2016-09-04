@@ -310,4 +310,15 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
   });
+
+  it('ignores an included file', () => {
+    waitsForPromise(() => {
+      const goodFile = path.join(__dirname, 'fixtures', 'issues.yml');
+      return atom.workspace.open(goodFile).then(editor =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(0);
+        })
+      );
+    });
+  });
 });

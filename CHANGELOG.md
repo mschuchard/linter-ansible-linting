@@ -1,4 +1,5 @@
 ### Next (Roadmap)
+- Linter now ignores includes and roles.
 - travisci
 - jasmine babel
 - workaround for directly linting roles and includes

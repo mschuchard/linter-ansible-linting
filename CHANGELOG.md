@@ -1,6 +1,7 @@
 ### Next (Roadmap)
 - Linter now ignores includes and roles.
 - Unexpected errors are now thrown with details to Atom notifications instead of vague AtomLinter displays.
+- Added severity key.
 - travisci
 - jasmine babel
 - workaround for directly linting roles and includes

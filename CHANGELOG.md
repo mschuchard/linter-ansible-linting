@@ -1,10 +1,9 @@
 ### Next (Roadmap)
-- Linter now ignores includes and roles.
 - Unexpected errors are now thrown with details to Atom notifications instead of vague AtomLinter displays.
 - Added severity key.
+- Removed option to lint all yaml by default since `language-ansible` now identifies all `.yml` as Ansible.
 - travisci
 - jasmine babel
-- workaround for directly linting roles and includes
 
 ### 1.2.0
 - Required `ansible-lint` version bumped from `2.1.0` to `2.5.0`.

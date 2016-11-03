@@ -1,9 +1,12 @@
 ### Next (Roadmap)
+- enable non-playbook linting from ansible-lint 3.3.0 with role directory trick
+- travisci
+- jasmine babel
+
+### 1.2.1
 - Unexpected errors are now thrown with details to Atom notifications instead of vague AtomLinter displays.
 - Added severity key.
 - Removed option to lint all yaml by default since `language-ansible` now identifies all `.yml` as Ansible.
-- travisci
-- jasmine babel
 
 ### 1.2.0
 - Required `ansible-lint` version bumped from `2.1.0` to `2.5.0`.

@@ -1,4 +1,4 @@
-#Out of bounds linting warning for error handling
+# Out of bounds linting from another file which should now be blocked.
 ---
 - hosts: whatever
 

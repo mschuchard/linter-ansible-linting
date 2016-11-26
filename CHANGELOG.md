@@ -1,10 +1,11 @@
 ### Next (Roadmap)
 - Added exclude directories option to package config settings.
 - Block linting warnings that come from included files.
+- ANSIBLE0016 and ANSIBLE0017 skips added in package config settings.
 - enable non-playbook linting from ansible-lint 3.3.0 with role directory trick
 - travisci
 - jasmine babel
-- check on new stuff in latest ansible-lint
+- update tests for 0016-0017 and the test_six change and anything else
 
 ### 1.2.1
 - Unexpected errors are now thrown with details to Atom notifications instead of vague AtomLinter displays.

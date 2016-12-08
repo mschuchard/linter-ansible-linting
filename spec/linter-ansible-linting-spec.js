@@ -147,6 +147,22 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[11].range.length).toBeDefined();
           expect(messages[11].range.length).toEqual(2);
           expect(messages[11].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[12].text).toBeDefined();
+          expect(messages[12].text).toEqual('Tasks that run when changed should likely be handlers');
+          expect(messages[12].filePath).toBeDefined();
+          expect(messages[12].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[12].range).toBeDefined();
+          expect(messages[12].range.length).toBeDefined();
+          expect(messages[12].range.length).toEqual(2);
+          expect(messages[12].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[13].text).toBeDefined();
+          expect(messages[13].text).toEqual('become_user requires become to work as expected');
+          expect(messages[13].filePath).toBeDefined();
+          expect(messages[13].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[13].range).toBeDefined();
+          expect(messages[13].range.length).toBeDefined();
+          expect(messages[13].range.length).toEqual(2);
+          expect(messages[13].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });
@@ -263,7 +279,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file that would throw an error and', () => {
+  describe('checks a file that has an out bounds warning in an include and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'test_six.yml');
     beforeEach(() => {
@@ -274,29 +290,12 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds no messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
+          expect(messages.length).toEqual(0);
         })
       );
-    });
-
-    it('verifies the messages', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('An include or role has a linting issue which cannot display for this file. Please fix before continuing linter use');
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(/.+test_six\.yml$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
-        });
-      });
     });
   });
 

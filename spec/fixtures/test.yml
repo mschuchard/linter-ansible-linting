@@ -20,12 +20,14 @@
   - name: ANSIBLE0007
     command: /bin/mkdir /path/to/dir creates=/path/to/dir
 
-  - name: ANSIBLE0009
+  - name: ANSIBLE0009 and ANSIBLE0017
     file: path=/path/to/file mode=123
+    become_user: me
 
   - name: ANSIBLE0010 and ANSIBLE0015
     yum: name=ansible state=latest
     with_items: items
 
-  - name: ANSIBLE0014
+  - name: ANSIBLE0014 and ANSIBLE0016
     command: HOME=/foo /bin/echo 'hello world' creates=world
+    when: result.changed

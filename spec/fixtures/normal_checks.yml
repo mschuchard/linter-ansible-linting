@@ -1,4 +1,4 @@
-#Edited from ansible-lint/examples.
+# All ansible-lint checks represented here.
 ---
 - hosts: webservers
 #ANSIBLE0008

@@ -10,14 +10,14 @@ describe('The Ansible Lint provider for Linter', () => {
     waitsForPromise(() => {
       atom.packages.activatePackage('linter-ansible-linting');
       return atom.packages.activatePackage('language-ansible').then(() =>
-        atom.workspace.open(path.join(__dirname, 'fixtures', 'test_two.yml'))
+        atom.workspace.open(path.join(__dirname, 'fixtures', 'clean.yml'))
       );
     });
   });
 
   describe('checks a file with multiple issues and', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures', 'test.yml');
+    const badFile = path.join(__dirname, 'fixtures', 'normal_checks.yml');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -170,7 +170,7 @@ describe('The Ansible Lint provider for Linter', () => {
 
   describe('checks a file that would throw an error and', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures', 'test_three.yml');
+    const badFile = path.join(__dirname, 'fixtures', 'syntax.yml');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -207,7 +207,7 @@ describe('The Ansible Lint provider for Linter', () => {
 
   describe('checks a file that would throw an error and', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures', 'test_four.yml');
+    const badFile = path.join(__dirname, 'fixtures', 'missing_include.yml');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -244,7 +244,7 @@ describe('The Ansible Lint provider for Linter', () => {
 
   describe('checks a file that would throw an error and', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures', 'test_five.yml');
+    const badFile = path.join(__dirname, 'fixtures', 'unreadable_file.yml');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -281,7 +281,7 @@ describe('The Ansible Lint provider for Linter', () => {
 
   describe('checks a file that has an out bounds warning in an include and', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures', 'test_six.yml');
+    const badFile = path.join(__dirname, 'fixtures', 'include_has_issues.yml');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -301,7 +301,7 @@ describe('The Ansible Lint provider for Linter', () => {
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {
-      const goodFile = path.join(__dirname, 'fixtures', 'test_two.yml');
+      const goodFile = path.join(__dirname, 'fixtures', 'clean.yml');
       return atom.workspace.open(goodFile).then(editor =>
         lint(editor).then(messages => {
           expect(messages.length).toEqual(0);

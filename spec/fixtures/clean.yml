@@ -1,4 +1,4 @@
-#Reused from ansible-lint/examples/nomatches.yml.
+# Clean with no errors or warnings.
 ---
 - hosts: whatever
 

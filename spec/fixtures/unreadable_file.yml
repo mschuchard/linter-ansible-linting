@@ -1,4 +1,4 @@
-#Attempt to include directory for error handling
+# Attempt to include directory for error handling.
 ---
 - hosts: whatever
 

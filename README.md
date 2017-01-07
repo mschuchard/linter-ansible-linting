@@ -1,7 +1,7 @@
 ![Preview](https://raw.githubusercontent.com/mschuchard/linter-ansible-linting/master/linter_ansible_linting.png)
 
 ### Linter-Ansible-Linting
-`Linter-Ansible-Linting` aims to provide functional and robust `Ansible` linting functionality within Atom.
+`Linter-Ansible-Linting` aims to provide functional and robust `Ansible-Lint` linting functionality within Atom.
 
 ### Installation
 `Ansible-Lint >= 2.5.0` (because of the pep8 parseable output argument, enhanced handling of include and role issues, `-R` argument, and the removal of ANSIBLE0003) is required to be installed (preferably from a package or a pip) before using this. `Ansible-Lint >= 3.0.1` and `Ansible >= 2.0.0.2` are recommended to be installed. The `Linter` and `Language-Ansible` Atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.

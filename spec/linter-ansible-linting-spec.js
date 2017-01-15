@@ -193,13 +193,9 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Error');
           expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('This file, an include, or role has a syntax error. Please fix before continuing linter use');
+          expect(messages[0].text).toEqual('This file, an include, or role has a syntax error. Please fix before continuing linter use.');
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+syntax\.yml$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });
@@ -233,10 +229,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].text).toMatch(/Missing file/);
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+missing_include\.yml$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });
@@ -270,10 +262,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].text).toMatch(/Unreadable or not file/);
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+unreadable_file\.yml$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });

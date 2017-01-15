@@ -1,11 +1,4 @@
-# Helper for include_has_issues.yml
+# role with issue
 ---
-
-
-
-
-
-
-
 - name: ANSIBLE0014
   command: HOME=/foo /bin/echo 'hello world' creates=world

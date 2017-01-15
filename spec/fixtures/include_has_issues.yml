@@ -3,4 +3,4 @@
 - hosts: whatever
 
   tasks:
-    - include: issues.yml
+    - include: include_with_issues.yml

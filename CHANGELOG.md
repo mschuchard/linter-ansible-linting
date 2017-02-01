@@ -1,8 +1,10 @@
 ### Next (Roadmap)
+- Fix Rule Skips not working for 10-17.
 - enable non-playbook linting from ansible-lint 3.3.0 with role directory trick
 - travisci
 - jasmine babel
 - use trace for issues in other files
+- do the rule skip loop in a more dynamic/futureproof way
 
 ### 1.2.2
 - Added exclude directories option to package config settings.

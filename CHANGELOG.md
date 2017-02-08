@@ -3,7 +3,7 @@
 - enable non-playbook linting from ansible-lint 3.3.0 with role directory trick
 - travisci
 - jasmine babel
-- use trace for issues in other files
+- generate message for issues in other files
 - do the rule skip loop in a more dynamic/futureproof way
 
 ### 1.2.2

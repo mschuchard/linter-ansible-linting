@@ -253,7 +253,7 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('verifies the messages', () => {
+    it('verifies the message', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].type).toBeDefined();
@@ -278,12 +278,29 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds no messages', () => {
+    it('finds one message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(0);
+          expect(messages.length).toEqual(1);
         })
       );
+    });
+
+    it('verifies the message in another file', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[9].filePath).toBeDefined();
+          expect(messages[9].filePath).toMatch(/.+include_has_issues\.yml$/);
+          expect(messages[9].range).toBeDefined();
+          expect(messages[9].range.length).toBeDefined();
+          expect(messages[9].range.length).toEqual(2);
+          expect(messages[9].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[9].type).toBeDefined();
+          expect(messages[9].type).toEqual('Warning');
+          expect(messages[9].text).toBeDefined();
+          expect(messages[9].text).toEqual('Environment variables don\'t work as part of command');
+        });
+      });
     });
   });
 

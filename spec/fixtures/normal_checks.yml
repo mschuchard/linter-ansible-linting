@@ -17,8 +17,9 @@
   #ANSIBLE0011 and ANSIBLE0013
   - shell: echo hello creates=/foo
 
-  - name: ANSIBLE0007
+  - name: ANSIBLE0007 and ANSIBLE0018
     command: /bin/mkdir /path/to/dir creates=/path/to/dir
+    always_run: yes
 
   - name: ANSIBLE0009 and ANSIBLE0017
     file: path=/path/to/file mode=123

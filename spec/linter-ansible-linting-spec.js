@@ -163,6 +163,14 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[13].range.length).toBeDefined();
           expect(messages[13].range.length).toEqual(2);
           expect(messages[13].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[14].text).toBeDefined();
+          expect(messages[14].text).toEqual('Deprecated always_run');
+          expect(messages[14].filePath).toBeDefined();
+          expect(messages[14].filePath).toMatch(/.+normal_checks\.yml$/);
+          expect(messages[14].range).toBeDefined();
+          expect(messages[14].range.length).toBeDefined();
+          expect(messages[14].range.length).toEqual(2);
+          expect(messages[14].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });

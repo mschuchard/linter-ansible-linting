@@ -1,10 +1,10 @@
 ### Next (Roadmap)
 - Fix Rule Skips not working for 10-17 and slight refactoring to prevent similar issues in the future.
 - Warnings for files which are included or roles from the playbook are now displayed.
-- enable non-playbook linting from ansible-lint 3.3.0 with role directory trick
+- ANSIBLE0018 skip added.
 - travisci
 - jasmine babel
-- check new features
+- followup on role linting
 
 ### 1.2.2
 - Added exclude directories option to package config settings.

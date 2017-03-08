@@ -1,5 +1,5 @@
 ### Next (Roadmap)
-- Fix Rule Skips not working for 10-17 and slight refactoring to prevent similar issues in the future.
+- Fix Rule Skips not working for 10-17 and refactored to prevent issues in the future.
 - Warnings for files which are included or roles from the playbook are now displayed.
 - ANSIBLE0018 skip added.
 - travisci

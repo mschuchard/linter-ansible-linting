@@ -1,10 +1,14 @@
 ### Next (Roadmap)
-- Fix Rule Skips not working for 10-17 and refactored to prevent issues in the future.
-- Warnings for files which are included or roles from the playbook are now displayed.
-- ANSIBLE0018 skip added.
 - travisci
 - jasmine babel
 - followup on role linting
+- linter 2 api
+- new interface stuff (linter-ui-default --> panel represents/statusbar represents --> entire project) in doc; click on line:col in panel for shortcut
+
+### 1.2.3
+- Fixed Rule Skips not working for 10-17 and refactored to prevent issues in the future.
+- Warnings for files which are included or roles from the playbook are now displayed.
+- ANSIBLE0018 skip added.
 
 ### 1.2.2
 - Added exclude directories option to package config settings.

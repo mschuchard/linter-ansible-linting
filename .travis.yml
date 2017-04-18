@@ -1,0 +1,29 @@
+# setup environment
+sudo: false
+
+notifications:
+  email: false
+
+language: python
+
+git:
+  depth: 5
+
+# setup tests
+env:
+  global:
+    - APM_TEST_PACKAGES="language-ansible"
+    - ATOM_LINT_WITH_BUNDLED_NODE="true"
+
+os:
+  global: linux
+
+matrix:
+  include:
+    - env: ATOM_CHANNEL=stable
+    - env: ATOM_CHANNEL=beta
+
+# execute tests
+install: pip install ansible-lint
+before_script: ansible-lint --version
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

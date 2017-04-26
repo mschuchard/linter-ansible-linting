@@ -298,7 +298,7 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[9].filePath).toBeDefined();
-          expect(messages[9].filePath).toMatch(/.+include_has_issues\.yml$/);
+          expect(messages[9].filePath).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[9].range).toBeDefined();
           expect(messages[9].range.length).toBeDefined();
           expect(messages[9].range.length).toEqual(2);

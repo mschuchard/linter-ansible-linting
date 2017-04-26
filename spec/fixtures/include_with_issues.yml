@@ -1,4 +1,4 @@
-# Helper for include_has_issues.yml
+# Helper for include_has_issues.yml. This should not be linted directly.
 ---
 
 

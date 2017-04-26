@@ -1,4 +1,4 @@
-# Out of bounds linting from another file which should now be blocked.
+# Include has a linter issue which should trigger and display for the include.
 ---
 - hosts: whatever
 

@@ -1,7 +1,7 @@
 ### Next (Roadmap)
+- Switched to using Linter v2 API.
 - jasmine babel
 - followup on role linting
-- linter 2 api
 
 ### 1.2.3
 - Fixed Rule Skips not working for 10-17 and refactored to prevent issues in the future.

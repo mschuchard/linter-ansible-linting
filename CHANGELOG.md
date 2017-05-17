@@ -1,5 +1,6 @@
 ### Next (Roadmap)
 - Switched to using Linter v2 API.
+- Removed `atom-package-deps` dependency and functionality.
 - jasmine babel
 - followup on role linting
 

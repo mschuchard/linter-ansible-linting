@@ -26,13 +26,8 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "atom-linter": "^5.0.2",
-    "atom-package-deps": "^3.0.9"
+    "atom-linter": "^5.0.2"
   },
-  "package-deps": [
-    "linter",
-    "language-ansible"
-  ],
   "devDependencies": {
     "eslint": "latest",
     "babel-eslint": "latest"

@@ -1,8 +1,10 @@
 ### Next (Roadmap)
-- Switched to using Linter v2 API.
-- Removed `atom-package-deps` dependency and functionality.
 - jasmine babel
 - followup on role linting
+
+### 1.3.0
+- Switched to using Linter v2 API.
+- Removed `atom-package-deps` dependency and functionality.
 
 ### 1.2.3
 - Fixed Rule Skips not working for 10-17 and refactored to prevent issues in the future.

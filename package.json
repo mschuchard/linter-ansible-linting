@@ -42,9 +42,6 @@
       "browser": true,
       "node": true
     },
-    "ecmaFeatures": {
-      "modules": true
-    },
     "globals": {
       "atom": true
     }

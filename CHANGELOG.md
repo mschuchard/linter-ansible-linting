@@ -1,7 +1,6 @@
 ### Next (Roadmap)
-- jasmine babel (excerpt and position equals)
 - followup on role linting
-https://github.com/mschuchard/linter-ansible-linting/issues/21
+21
 
 ### 1.3.0
 - Switched to using Linter v2 API.

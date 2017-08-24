@@ -26,7 +26,7 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds all the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
           expect(messages.length).toEqual(15);
@@ -43,105 +43,90 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[1].location.position).toBeDefined();
-          expect(messages[1].location.position.length).toEqual(2);
           expect(messages[2].severity).toBeDefined();
           expect(messages[2].severity).toEqual('warning');
           expect(messages[2].excerpt).toBeDefined();
           expect(messages[2].location.file).toBeDefined();
           expect(messages[2].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[2].location.position).toBeDefined();
-          expect(messages[2].location.position.length).toEqual(2);
           expect(messages[3].severity).toBeDefined();
           expect(messages[3].severity).toEqual('warning');
           expect(messages[3].excerpt).toBeDefined();
           expect(messages[3].location.file).toBeDefined();
           expect(messages[3].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[3].location.position).toBeDefined();
-          expect(messages[3].location.position.length).toEqual(2);
           expect(messages[4].severity).toBeDefined();
           expect(messages[4].severity).toEqual('warning');
           expect(messages[4].excerpt).toBeDefined();
           expect(messages[4].location.file).toBeDefined();
           expect(messages[4].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[4].location.position).toBeDefined();
-          expect(messages[4].location.position.length).toEqual(2);
           expect(messages[5].severity).toBeDefined();
           expect(messages[5].severity).toEqual('warning');
           expect(messages[5].excerpt).toBeDefined();
           expect(messages[5].location.file).toBeDefined();
           expect(messages[5].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[5].location.position).toBeDefined();
-          expect(messages[5].location.position.length).toEqual(2);
           expect(messages[6].severity).toBeDefined();
           expect(messages[6].severity).toEqual('warning');
           expect(messages[6].excerpt).toBeDefined();
           expect(messages[6].location.file).toBeDefined();
           expect(messages[6].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[6].location.position).toBeDefined();
-          expect(messages[6].location.position.length).toEqual(2);
           expect(messages[7].severity).toBeDefined();
           expect(messages[7].severity).toEqual('warning');
           expect(messages[7].excerpt).toBeDefined();
           expect(messages[7].location.file).toBeDefined();
           expect(messages[7].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[7].location.position).toBeDefined();
-          expect(messages[7].location.position.length).toEqual(2);
           expect(messages[8].severity).toBeDefined();
           expect(messages[8].severity).toEqual('warning');
           expect(messages[8].excerpt).toBeDefined();
           expect(messages[8].location.file).toBeDefined();
           expect(messages[8].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[8].location.position).toBeDefined();
-          expect(messages[8].location.position.length).toEqual(2);
           expect(messages[9].severity).toBeDefined();
           expect(messages[9].severity).toEqual('warning');
           expect(messages[9].excerpt).toBeDefined();
           expect(messages[9].location.file).toBeDefined();
           expect(messages[9].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[9].location.position).toBeDefined();
-          expect(messages[9].location.position.length).toEqual(2);
           expect(messages[10].severity).toBeDefined();
           expect(messages[10].severity).toEqual('warning');
           expect(messages[10].excerpt).toBeDefined();
           expect(messages[10].location.file).toBeDefined();
           expect(messages[10].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[10].location.position).toBeDefined();
-          expect(messages[10].location.position.length).toEqual(2);
           expect(messages[11].severity).toBeDefined();
           expect(messages[11].severity).toEqual('warning');
           expect(messages[11].excerpt).toBeDefined();
           expect(messages[11].location.file).toBeDefined();
           expect(messages[11].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[11].location.position).toBeDefined();
-          expect(messages[11].location.position.length).toEqual(2);
           expect(messages[12].severity).toBeDefined();
           expect(messages[12].severity).toEqual('warning');
           expect(messages[12].excerpt).toBeDefined();
           expect(messages[12].location.file).toBeDefined();
           expect(messages[12].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[12].location.position).toBeDefined();
-          expect(messages[12].location.position.length).toEqual(2);
           expect(messages[13].severity).toBeDefined();
           expect(messages[13].severity).toEqual('warning');
           expect(messages[13].excerpt).toBeDefined();
           expect(messages[13].location.file).toBeDefined();
           expect(messages[13].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[13].location.position).toBeDefined();
-          expect(messages[13].location.position.length).toEqual(2);
           expect(messages[14].severity).toBeDefined();
           expect(messages[14].severity).toEqual('warning');
           expect(messages[14].excerpt).toBeDefined();
           expect(messages[14].location.file).toBeDefined();
           expect(messages[14].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[14].location.position).toBeDefined();
-          expect(messages[14].location.position.length).toEqual(2);
         });
       });
     });
@@ -158,10 +143,10 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds the error message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
+          expect(messages.length).toEqual(1);
         })
       );
     });
@@ -173,7 +158,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toEqual('This file, an include, or role, has a syntax error. Please fix before continuing linter use.');
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+syntax\.yml$/);
         });
@@ -192,10 +176,10 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds the error message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
+          expect(messages.length).toEqual(1);
         })
       );
     });
@@ -207,7 +191,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toMatch(/Missing file/);
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
         });
@@ -226,10 +209,10 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds the error message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
+          expect(messages.length).toEqual(1);
         })
       );
     });
@@ -241,7 +224,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toMatch(/Unreadable or not file/);
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+unreadable_file\.yml$/);
         });
@@ -260,7 +242,7 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds one message', () => {
+    it('finds the message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
           expect(messages.length).toEqual(1);
@@ -274,7 +256,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.position).toEqual([[9, 0], [9, 1]]);
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');

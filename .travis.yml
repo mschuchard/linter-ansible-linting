@@ -19,9 +19,9 @@ env:
 matrix:
   include:
     - os: linux
-      python: 2.7.12
+      python: 2.7.13
     - os: linux
-      python: 2.7.12
+      python: 2.7.13
       env: ATOM_CHANNEL=beta
 
 # execute tests

@@ -1,5 +1,6 @@
 ### Next (Roadmap)
-- Added option to exclude `.yml` filenames that match a regexp from linting. 
+- Added option to exclude `.yml` filenames that match a regexp from linting.
+- Simplified using non-default rules directories.
 - followup on role linting
 21
 

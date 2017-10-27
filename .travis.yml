@@ -26,5 +26,7 @@ matrix:
 
 # execute tests
 install: pip install ansible-lint
-before_script: ansible-lint --version
+before_script:
+  - ansible --version
+  - ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

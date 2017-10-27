@@ -1,6 +1,7 @@
 ### Next (Roadmap)
 - Added option to exclude `.yml` filenames that match a regexp from linting.
 - Simplified using non-default rules directories.
+- Updating unreadable/not file error recognition for new ansible-lint message and improving linter display message.
 - followup on role linting
 21
 

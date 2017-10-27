@@ -223,7 +223,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/Unreadable or not file/);
+          expect(messages[0].excerpt).toMatch(/is unreadable or not a file/);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+unreadable_file\.yml$/);
         });

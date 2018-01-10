@@ -1,4 +1,6 @@
-### Next (Roadmap)
+### 1.3.2 (Roadmap)
+- Skips moved to own config subsection and code for them optimized slightly.
+- Added capability for project `.ansible-lint` config file.
 - followup on role linting
 21
 

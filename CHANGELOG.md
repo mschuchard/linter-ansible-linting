@@ -1,8 +1,8 @@
 ### 1.3.2 (Roadmap)
 - Skips moved to own config subsection and code for them optimized slightly.
 - Added capability for project `.ansible-lint` config file.
+- Now cleanly notifies on files encrypted by `ansible-vault`. 
 - followup on role linting
-21
 
 ### 1.3.1
 - Added option to exclude `.yml` filenames that match a regexp from linting.

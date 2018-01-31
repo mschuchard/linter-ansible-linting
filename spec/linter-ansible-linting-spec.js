@@ -231,6 +231,39 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
+  describe('checks a file that would throw an error and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'vault_encrypted.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds the error message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the message', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('info');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toMatch(/decrypted with ansible-vault/);
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+vault_encrypted\.yml$/);
+        });
+      });
+    });
+  });
+
   describe('checks a file that has an out bounds warning in an include and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'include_has_issues.yml');

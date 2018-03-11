@@ -231,6 +231,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
+  // password for this is 'foo' just in case i ever need it
   describe('checks a file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'vault_encrypted.yml');

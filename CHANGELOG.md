@@ -1,6 +1,9 @@
 ### Next (Roadmap)
 - followup on role linting
 
+### 1.3.3
+- Added `ansible-advanced` to source scope.
+
 ### 1.3.2
 - Skips moved to own config subsection and code for them optimized slightly.
 - Added capability for project `.ansible-lint` config file.

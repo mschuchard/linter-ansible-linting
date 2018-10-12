@@ -1,4 +1,5 @@
 ### Next (Roadmap)
+- Update `atom-linter` dependency.
 - followup on role linting
 
 ### 1.3.3
@@ -43,7 +44,7 @@
 - 'Additionally use default rules' option added.
 
 ### 1.1.2
-- Updated atom-linter dependency.
+- Updated `atom-linter` dependency.
 - Added capability to lint all yaml files.
 - Fixed issue where skip ANSIBLE0008 and ANSIBLE0009 were being ignored in code.
 - Added error catching for a variety of `ansible-lint` errors thrown because of issues with linted playbooks.

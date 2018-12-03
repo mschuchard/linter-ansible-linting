@@ -3,3 +3,4 @@ node_modules
 spec
 linter_ansible_linting.png
 .git
+.travis.yml

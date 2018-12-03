@@ -3,7 +3,7 @@
 import * as path from 'path';
 
 describe('The Ansible Lint provider for Linter', () => {
-  const lint = require(path.join('..', 'lib', 'main.js')).provideLinter().lint;
+  const lint = require(path.join(__dirname, '../lib/main.js')).provideLinter().lint;
 
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();

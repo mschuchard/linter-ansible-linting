@@ -1,8 +1,8 @@
 ### Next (Roadmap)
 - Updated `atom-linter` dependency.
+- Catch linting on nonexistent files.
 - followup on role linting
-update travis for python3
-3.5 changed behavior and formatting
+- 3.5 changed behavior and formatting; also different rules with different num codes
 
 ### 1.3.3
 - Added `ansible-advanced` to source scope.

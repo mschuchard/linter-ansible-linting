@@ -1,6 +1,8 @@
-### Next (Roadmap)
+### 1.4.0 (Roadmap)
+- Bump minimum version of `ansible-lint` to 3.5.0.
 - followup on role linting
-- 3.5 changed behavior and formatting; also different rules with different num codes
+- 3.5 changed behavior and formatting; also different rules with different num codes; also tags are different now maybe
+- --parseable-severity  parseable output including severity of rule
 
 ### 1.3.4
 - Updated `atom-linter` dependency.

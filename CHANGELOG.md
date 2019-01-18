@@ -1,10 +1,10 @@
 ### 1.4.0 (Roadmap)
 - Support `ansible-lint` >= 3.5.0.
 
+- 3.5 changed behavior and formatting; also different rules with different num codes; also tags are different now
 - phase out ansible-lint < 3.5.0 support eventually by tightening regexp and raising min on activate
 - followup on role linting
-- 3.5 changed behavior and formatting; also different rules with different num codes; also tags are different now maybe
-- --parseable-severity  parseable output including severity of rule
+- --parseable-severity  parseable output including severity of rule when min becomes 3.5
 
 ### 1.3.4
 - Updated `atom-linter` dependency.

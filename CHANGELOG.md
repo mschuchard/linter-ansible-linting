@@ -1,7 +1,7 @@
 ### 1.4.0 (Roadmap)
 - Support `ansible-lint` >= 3.5.0.
+- Future-proof tag/rule skips option.
 
-- 3.5 changed behavior and formatting; also different rules with different num codes; also tags are different now
 - phase out ansible-lint < 3.5.0 support eventually by tightening regexp and raising min on activate
 - followup on role linting
 - --parseable-severity  parseable output including severity of rule when min becomes 3.5

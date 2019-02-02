@@ -1,8 +1,8 @@
 ### 1.4.0 (Roadmap)
-- Support `ansible-lint` >= 3.5.0.
+- Support `ansible-lint` >= 3.5.0 and deprecate `ansible-lint` < 3.5.0.
 - Future-proof tag/rule skips option.
 
-- phase out ansible-lint < 3.5.0 support eventually by tightening regexp and raising min on activate
+- phase out ansible-lint < 3.5.0 support eventually by tightening regexp
 - followup on role linting
 - --parseable-severity  parseable output including severity of rule when min becomes 3.5
 

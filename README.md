@@ -6,9 +6,7 @@
 `Linter-Ansible-Linting` aims to provide functional and robust `Ansible-Lint` linting functionality within Atom.
 
 ### Installation
-`Ansible-Lint >= 2.5.0` is required to be installed (preferably from a package or a pip) before using this. The `Linter` and `Language-Ansible` Atom packages are also required.
-
-**Notice** Due to several non-backwards compatible changes to `Ansible-Lint` in `3.5.0`, the upcoming version `1.4.0` of this package will begin to support that version. You must use the upcoming version `1.4.0` if you are using `Ansible-Lint >= 3.5.0`.
+`Ansible-Lint` is required (`>= 3.5.0` version range is highly recommended) to be installed (preferably from a package or a pip) before using this. Support for `Ansible-Lint < 3.5` is deprecated. It should exist, but it is not guaranteed. The `Linter` and `Language-Ansible` Atom packages are also required.
 
 ### Usage
 - This linter must be used on playbook files.

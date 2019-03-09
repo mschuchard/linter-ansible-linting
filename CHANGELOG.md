@@ -1,8 +1,9 @@
 ### 1.4.1 (Roadmap)
+- Improve check on satisfying minimum version.
+
 phase out ansible-lint < 3.5.0 support eventually by tightening regexp and also check elsewhere in code
 followup on role linting
 --parseable-severity  parseable output including severity of rule when min becomes 3.5
-improve min vers check
 
 ### 1.4.0
 - Support `ansible-lint` >= 3.5.0 and deprecate `ansible-lint` < 3.5.0.

@@ -29,7 +29,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds all the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(16);
+          expect(messages.length).toEqual(14);
         })
       );
     });
@@ -121,18 +121,6 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[13].location.file).toBeDefined();
           expect(messages[13].location.file).toMatch(/.+normal_checks\.yml$/);
           expect(messages[13].location.position).toBeDefined();
-          expect(messages[14].severity).toBeDefined();
-          expect(messages[14].severity).toEqual('warning');
-          expect(messages[14].excerpt).toBeDefined();
-          expect(messages[14].location.file).toBeDefined();
-          expect(messages[14].location.file).toMatch(/.+normal_checks\.yml$/);
-          expect(messages[14].location.position).toBeDefined();
-          expect(messages[15].severity).toBeDefined();
-          expect(messages[15].severity).toEqual('warning');
-          expect(messages[15].excerpt).toBeDefined();
-          expect(messages[15].location.file).toBeDefined();
-          expect(messages[15].location.file).toMatch(/.+normal_checks\.yml$/);
-          expect(messages[15].location.position).toBeDefined();
         });
       });
     });

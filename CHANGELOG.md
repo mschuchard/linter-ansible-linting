@@ -1,9 +1,6 @@
-### 1.4.1 (Roadmap)
+### 1.4.1
 - Improve check on satisfying minimum version.
 - Made linting timeout configurable.
-
-phase out ansible-lint < 3.5.0 support eventually by tightening regexp and also check elsewhere in code
---parseable-severity parseable output including severity of rule, --nocolor when min becomes 3.5
 
 ### 1.4.0
 - Support `ansible-lint` >= 3.5.0 and deprecate `ansible-lint` < 3.5.0.

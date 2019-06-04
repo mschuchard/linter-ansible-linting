@@ -1,5 +1,6 @@
 ### 1.5.0 (Roadmap)
 - Change linter scope to project level.
+- Bump minimum supported version to 3.5.0.
 
 - phase out ansible-lint < 3.5.0 support by tightening regexp and also check elsewhere in code
 - --parseable-severity parseable output including severity of rule, --nocolor when min becomes 3.5

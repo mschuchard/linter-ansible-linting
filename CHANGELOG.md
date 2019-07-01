@@ -1,8 +1,7 @@
 ### 1.5.0 (Roadmap)
 - Change linter scope to project level.
 - Bump minimum supported version to 3.5.0.
-
-- --parseable-severity parseable output including severity of rule
+- Add config option to display severity.
 
 ### 1.4.1
 - Improve check on satisfying minimum version.

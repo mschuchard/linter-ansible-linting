@@ -1,8 +1,11 @@
 # setup environment
-dist: xenial
-sudo: false
+dist: bionic
 language: python
 cache: pip
+
+branches:
+  only:
+  - master
 
 notifications:
   email: false
@@ -19,9 +22,9 @@ env:
 matrix:
   include:
     - os: linux
-      python: 3.6
+      python: 3.7
     - os: linux
-      python: 3.6
+      python: 3.7
       env: ATOM_CHANNEL=beta
 
 # execute tests

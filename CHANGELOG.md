@@ -1,4 +1,6 @@
-### 1.5.0 (Roadmap)
+### 1.5.1 (Roadmap)
+
+### 1.5.0
 - Change linter scope to project level.
 - Bump minimum supported version to 3.5.0.
 - Add config option to display severity.

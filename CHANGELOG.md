@@ -1,4 +1,8 @@
 ### 1.5.1 (Roadmap)
+- Notify details on YAML syntax errors in Ansible files.
+
+- yaml syntax test
+- improve yaml; syntax error excerpt?
 
 ### 1.5.0
 - Change linter scope to project level.

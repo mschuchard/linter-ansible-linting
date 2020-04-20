@@ -145,7 +145,7 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('verifies the messages', () => {
+    it('verifies the message', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
@@ -154,6 +154,41 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].excerpt).toEqual('This file, an include, or role, has a syntax error. Please fix before continuing linter use.');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+syntax\.yml$/);
+        });
+      });
+    });
+  });
+
+  describe('checks a file that would throw a YAML syntax error and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'yaml_syntax.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds the error message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the message', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual('YAML syntax error.');
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[6, 0], [6, 1]]);
         });
       });
     });
@@ -178,7 +213,7 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('verifies the messages', () => {
+    it('verifies the message', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();

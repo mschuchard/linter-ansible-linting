@@ -1,0 +1,7 @@
+# YAML syntax error for error handling
+---
+- name: this task is fine
+  debug:
+    msg: 'hello world'
+
+name: this task is not

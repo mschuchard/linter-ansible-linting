@@ -126,7 +126,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file that would throw an error and', () => {
+  describe('checks a file that would throw an ansible syntax error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'syntax.yml');
     beforeEach(() => {
@@ -151,9 +151,11 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('This file, an include, or role, has a syntax error. Please fix before continuing linter use.');
+          expect(messages[0].excerpt).toEqual('Ansible syntax error.');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+syntax\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[5, 6], [5, 7]]);
         });
       });
     });
@@ -227,7 +229,7 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  describe('checks a file that would throw an error and', () => {
+  describe('checks an unreadable file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'unreadable_file.yml');
     beforeEach(() => {
@@ -261,7 +263,7 @@ describe('The Ansible Lint provider for Linter', () => {
   });
 
   // password for this is 'foo' just in case i ever need it
-  describe('checks a file that would throw an error and', () => {
+  describe('checks an encrypted file that would throw an error and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'vault_encrypted.yml');
     beforeEach(() => {

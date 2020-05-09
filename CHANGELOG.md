@@ -1,9 +1,11 @@
 ### Next (Roadmap)
 - Circumvent ansible-lint/atom-linter path relativization issue for included files.
+- Attempt to capture Ansible syntax error output.
 
 - improve yaml syntax error excerpt?
 - improve ansible syntax error excerpt?
-- unreadable test now throws errors
+- unreadable file test causes error sometimes (on file matches[1] null) because conflict between this and syntax validator package?
+- update unreadable test for new output
 
 ### 1.5.1
 - Notify details on YAML syntax errors in Ansible files.

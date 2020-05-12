@@ -151,7 +151,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Ansible syntax error.');
+          expect(messages[0].excerpt).toMatch(/has extra params, which is only allowed in the following modules/);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();

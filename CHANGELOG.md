@@ -1,10 +1,9 @@
-### Next (Roadmap)
+### 1.5.2 (Roadmap)
 - Circumvent ansible-lint/atom-linter path relativization issue for included files.
-- Attempt to capture Ansible syntax error message output.
-- Improve Ansible syntax error output capturing.
+- Capture Ansible syntax error message output.
 - Fix linter display output for newest output format of unreadable file error.
 
-- check on all of ansible syntax fixtures
+- check on all of ansible syntax/ansible-lint fixtures
 - improve yaml syntax error excerpt?
 
 ### 1.5.1

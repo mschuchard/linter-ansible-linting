@@ -5,6 +5,7 @@
 
 - check on all of ansible syntax/ansible-lint fixtures
 - improve yaml syntax error excerpt?
+- deal with ansible-lint inconsistent error output format/atom node.js bug
 
 ### 1.5.1
 - Notify details on YAML syntax errors in Ansible files.

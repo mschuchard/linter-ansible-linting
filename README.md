@@ -13,3 +13,5 @@ Ansible-Lint >= 3.5.0 is required to be installed (preferably from a package or 
 - `Ansible-Lint` will attempt to lint includes and roles from your playbook. Errors with includes and roles will throw a clean error to your `Atom-Linter` display notifications. Syntax errors in the current file, includes, and roles will be caught, and a notification displayed via the linter.
 - Adding any one nonexistent rules directory to the custom rules directories array will cause Ansible-Lint to not function.
 - To quickly and easily access issues in other files, you will need to change the settings inside Linter-UI-Default. For `Panel Represents` and/or `Statusbar Represents`, you will need to change their options to `Entire Project`. This will allow you to use either display to quickly access issues in other files by clicking on the displayed information.
+
+**Notice**: Ansible syntax issues will be displayed at the top of the current file due to a bug in Atom's Node.js and inconsistent output formats for errors from Ansible-Lint. If true syntax checking is desired, then the package `linter-ansible-syntax` should be installed.

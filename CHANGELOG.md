@@ -2,6 +2,7 @@
 - Circumvent ansible-lint/atom-linter path relativization issue for included files.
 - Capture Ansible syntax error message output.
 - Fix linter display output for newest output format of unreadable file error.
+- Circumvent ansible-lint unparseable stderr output in 4.3.5.
 
 - check on all of ansible syntax/ansible-lint fixtures
 - improve yaml syntax error excerpt?

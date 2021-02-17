@@ -1,15 +1,7 @@
-### Next (Roadmap)
+### 1.6.0
 - Fix path separator for platform independence.
 - Add config option for ansible-lint 5 beta support.
 - Add ansible-lint 5 style warning support.
-
-- check on all of ansible syntax/ansible-lint fixtures
-- improve yaml syntax error excerpt?
-- deal with ansible-lint 4 inconsistent error output format/atom node.js bug
-- syntax check output change and improve in 5
-- non syntax errors give unpredictable output patterns
-- check arg and flag changes for 5
-- improve lint_regex_new
 
 ### 1.5.2
 - Circumvent ansible-lint/atom-linter path relativization issue for included files.

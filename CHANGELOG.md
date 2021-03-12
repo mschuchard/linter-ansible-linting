@@ -1,5 +1,6 @@
 ### 1.6.1 (Roadmap)
 - Update Ansible-Lint 5 beta opt-in/out to auto-detect/configure.
+- Fix regression introduced in path separator fix.
 
 - check on all of ansible syntax/ansible-lint fixtures
 - improve yaml syntax error excerpt?
@@ -7,7 +8,6 @@
 - syntax check output change and improve in 5
 - non syntax errors give unpredictable output patterns
 - check arg and flag changes for 5
-- issues in other files are fully relative so makes pathing a headache
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
 
 ### 1.6.0

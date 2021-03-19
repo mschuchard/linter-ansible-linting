@@ -1,13 +1,15 @@
-### 1.6.1 (Roadmap)
-- Update Ansible-Lint 5 beta opt-in/out to auto-detect/configure.
-- Fix regression introduced in path separator fix.
-- Support new syntax checking capability in Ansible-Lint 5.
-
+### 1.7.0 (Roadmap)
+- full version 5 support
 - check on all of ansible syntax/ansible-lint fixtures
 - deal with ansible-lint 4 inconsistent error output format/atom node.js bug
 - non syntax errors give unpredictable output patterns (doublecheck this for 5)
 - check arg and flag changes for 5
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
+
+### 1.6.1
+- Update Ansible-Lint 5 beta opt-in/out to auto-detect/configure.
+- Fix regression introduced in path separator fix.
+- Support new syntax checking capability in Ansible-Lint 5.
 
 ### 1.6.0
 - Fix path separator for platform independence.

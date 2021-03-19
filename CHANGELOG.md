@@ -4,9 +4,8 @@
 - Support new syntax checking capability in Ansible-Lint 5.
 
 - check on all of ansible syntax/ansible-lint fixtures
-- improve yaml syntax error excerpt?
 - deal with ansible-lint 4 inconsistent error output format/atom node.js bug
-- non syntax errors give unpredictable output patterns
+- non syntax errors give unpredictable output patterns (doublecheck this for 5)
 - check arg and flag changes for 5
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
 

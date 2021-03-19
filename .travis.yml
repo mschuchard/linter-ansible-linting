@@ -16,20 +16,20 @@ git:
 # setup tests
 env:
   global:
-    - APM_TEST_PACKAGES="language-ansible"
-    - ATOM_LINT_WITH_BUNDLED_NODE="true"
+  - APM_TEST_PACKAGES="language-ansible"
+  - ATOM_LINT_WITH_BUNDLED_NODE="true"
 
 matrix:
   include:
-    - os: linux
-      python: 3.7
-    - os: linux
-      python: 3.7
-      env: ATOM_CHANNEL=beta
+  - os: linux
+    python: 3.7
+  - os: linux
+    python: 3.7
+    env: ATOM_CHANNEL=beta
 
 # execute tests
 install: pip install ansible-lint
 before_script:
-  - ansible --version
-  - ansible-lint --version
+- ansible --version
+- ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

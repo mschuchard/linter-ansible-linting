@@ -186,11 +186,11 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('YAML syntax error.');
+          expect(messages[0].excerpt).toEqual('syntax-check: Ansible syntax check failed');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[6, 0], [6, 1]]);
+          expect(messages[0].location.position).toEqual([[-1, 0], [-1, 1]]);
         });
       });
     });

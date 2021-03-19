@@ -8,7 +8,7 @@ Linter-Ansible-Linting aims to provide functional and robust Ansible-Lint lintin
 ### Installation
 Ansible-Lint >= 3.5.0 is required to be installed (preferably from a package or a pip) before using this. Ansible-Lint < 3.5 is officially unsupported. It may work, but it is not guaranteed. The Linter and Language-Ansible (or Language-Ansible-Advanced) Atom packages are also required.
 
-**Notice** Ansible-Lint 5 is supported only as beta for the 1.6.x releases. you will need to opt-in to the beta support in the package config options. It will be fully supported in the 1.7.0 release once Ansible-Lint 5 output behavior stabilizes.
+**Notice**: Ansible-Lint 5 is supported only as beta for the 1.6.x releases. Your Ansible-Lint version will be auto-detected, and the beta config option will be auto-configured for you. It may be beneficial for you to verify its correct setting in the package config settings yourself. Version 5 will be fully supported in the 1.7.0 release once Ansible-Lint 5 output behavior stabilizes. Note also that Ansible-Lint 5 is slower than previous releases, and more time is therefore needed to display linting information.
 
 ### Usage
 - This linter must be used on playbook or role task files.
@@ -16,4 +16,4 @@ Ansible-Lint >= 3.5.0 is required to be installed (preferably from a package or 
 - Adding any one nonexistent rules directory to the custom rules directories array will cause Ansible-Lint to not function.
 - To quickly and easily access issues in other files, you will need to change the settings inside Linter-UI-Default. For `Panel Represents` and/or `Statusbar Represents`, you will need to change their options to `Entire Project`. This will allow you to use either display to quickly access issues in other files by clicking on the displayed information.
 
-**Notice**: Ansible syntax issues will be displayed at the top of the current file due to a bug in Atom's Node.js and inconsistent output formats for errors from Ansible-Lint. If true syntax checking is desired, then the package `linter-ansible-syntax` should be installed.
+**Notice**: For versions < 3.5.0, Ansible syntax issues will be displayed at the top of the current file due to a bug in Atom's Node.js and inconsistent output formats for errors from Ansible-Lint. If true syntax checking is desired, then the package `linter-ansible-syntax` should be installed.

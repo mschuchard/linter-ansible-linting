@@ -1,7 +1,6 @@
 ### 1.7.0 (Roadmap)
 - Fully ignore noise output to stderr.
 
-- full version 5 support
 - check on all of ansible syntax/ansible-lint fixtures
 - deal with ansible-lint 4 inconsistent error output format/atom node.js bug
 - non syntax errors give unpredictable output patterns (doublecheck this for 5)

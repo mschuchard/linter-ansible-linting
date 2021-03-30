@@ -2,7 +2,7 @@
 ---
 - hosts: webservers
   #ANSIBLE0008
-  sudo_user: root
+  become_user: root
 
   tasks:
   - name: ANSIBLE0004
@@ -19,7 +19,6 @@
 
   - name: ANSIBLE0007 and ANSIBLE0018
     command: /bin/mkdir /path/to/dir creates=/path/to/dir
-    always_run: yes
 
   - name: ANSIBLE0009 and ANSIBLE0017
     file: path=/path/to/file mode=123

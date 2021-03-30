@@ -3,8 +3,6 @@
 - hosts: whatever
 
   tasks:
-    - name: hello world
-      action: debug msg="Hello!"
-
-    - name: this should be fine too
-      action: file state=touch path=./wherever
+  - name: hello world
+    debug:
+      msg: 'Hello!'

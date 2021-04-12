@@ -1,5 +1,5 @@
 # setup environment
-dist: bionic
+dist: focal
 language: python
 cache: pip
 
@@ -16,19 +16,20 @@ git:
 # setup tests
 env:
   global:
-  - APM_TEST_PACKAGES="language-ansible"
-  - ATOM_LINT_WITH_BUNDLED_NODE="true"
+  - APM_TEST_PACKAGES='language-ansible'
+  - ATOM_LINT_WITH_BUNDLED_NODE='true'
+
+os: linux
 
 matrix:
   include:
-  - os: linux
-    python: 3.7
-  - os: linux
-    python: 3.7
-    env: ATOM_CHANNEL=beta
+  - python: 3.8
+    env: VERSION=4
+  - python: 3.8
+    env: VERSION=5
 
 # execute tests
-install: pip install ansible-lint
+install: pip install "ansible-lint~=${VERSION}"
 before_script:
 - ansible --version
 - ansible-lint --version

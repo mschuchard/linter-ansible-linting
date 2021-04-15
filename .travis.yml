@@ -24,13 +24,11 @@ os: linux
 matrix:
   include:
   - python: 3.8
-    env: VERSION=4
+    env: VERSION=4.0
   - python: 3.8
-    env: VERSION=5
+    env: VERSION=5.0
 
 # execute tests
 install: pip install "ansible-lint~=${VERSION}"
-before_script:
-- ansible --version
-- ansible-lint --version
+before_script: ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

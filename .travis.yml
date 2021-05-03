@@ -20,15 +20,16 @@ env:
   - ATOM_LINT_WITH_BUNDLED_NODE='true'
 
 os: linux
+python: 3.8
 
 matrix:
   include:
-  - python: 3.8
-    env: VERSION=4.0
-  - python: 3.8
-    env: VERSION=5.0
+  - env: VERSION=4.0
+  - env: VERSION=5.0
 
 # execute tests
-install: pip install "ansible-lint~=${VERSION}"
+install:
+- pip install "ansible-lint~=${VERSION}"
+- pip install ansible
 before_script: ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

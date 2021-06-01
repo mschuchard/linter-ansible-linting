@@ -2,12 +2,10 @@
 - Official Ansible-Lint 5 support.
 - Fully ignore noise output to stderr.
 
-- need better solution for noise throwing to stderr
-- check on all of ansible syntax/ansible-lint fixtures
-- deal with ansible-lint 4 inconsistent error output format/atom node.js bug
-- non syntax errors give unpredictable output patterns (unreadable, vault, yaml fixtures); work on unreadable and yaml (add proper file info later)
+- now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
-- 5 is catching errors formerly this package had to catch; check on what is still needed when >= 5
+- 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5
+- drop < 5 at 1.8
 
 ### 1.6.1
 - Update Ansible-Lint 5 beta opt-in/out to auto-detect/configure.

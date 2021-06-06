@@ -1,6 +1,7 @@
 ### 1.7.0 (Roadmap)
 - Official Ansible-Lint 5 support.
 - Fully ignore noise output to stderr.
+- Add config option to lint project if open file is not playbook.
 
 - now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant

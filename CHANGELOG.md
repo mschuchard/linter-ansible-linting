@@ -1,3 +1,11 @@
+### 1.7.1 (Roadmap)
+- Compensate pathing display for file not in project.
+
+- now syntax errors just generic message from ansible-lint
+- for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
+- 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5
+- drop < 5 at 1.8
+
 ### 1.7.0
 - Official Ansible-Lint 5 support.
 - Fully ignore noise output to stderr.

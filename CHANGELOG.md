@@ -1,5 +1,5 @@
 ### 1.7.1 (Roadmap)
-- Compensate pathing display for file not in project.
+- Fixes for pathing when tasks not in a project.
 
 - now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant

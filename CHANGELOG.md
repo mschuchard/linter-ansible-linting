@@ -1,3 +1,6 @@
+### (Next)
+- Updates to Linter API usage.
+
 ### 1.7.1 (Roadmap)
 - Fixes for pathing when tasks not in a project.
 

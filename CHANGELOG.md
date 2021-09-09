@@ -1,8 +1,6 @@
-### (Next)
-- Updates to Linter API usage.
-
 ### 1.7.1 (Roadmap)
 - Fixes for pathing when tasks not in a project.
+- Updates to Linter API usage.
 
 - now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant

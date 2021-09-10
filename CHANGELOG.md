@@ -1,12 +1,7 @@
-### 1.7.1 (Roadmap)
+### 1.7.1
 - Fixes for pathing when tasks not in a project.
 - Updates to Linter API usage.
 - Parse and display generic linter warnings in Ansible 5.
-
-- now syntax errors just generic message from ansible-lint
-- for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
-- 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5
-- drop < 5 at 1.8 (regex/match removal)
 
 ### 1.7.0
 - Official Ansible-Lint 5 support.

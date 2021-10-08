@@ -24,7 +24,6 @@ python: 3.8
 
 matrix:
   include:
-  - env: VERSION=4.0
   - env: VERSION=5.0
 
 # execute tests

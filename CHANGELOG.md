@@ -1,8 +1,9 @@
 ### 1.8.0 (Next)
+- Minimum version of ansible-lint increased to 5.
+
 - now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
-- 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5
-- drop < 5 (regex/match removal)
+- 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5 (use stdout and stderr on cli to assist)
 
 ### 1.7.1
 - Fixes for pathing when tasks not in a project.

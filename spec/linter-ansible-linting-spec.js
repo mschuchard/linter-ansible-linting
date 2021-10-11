@@ -184,13 +184,13 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toEqual('syntax-check: Ansible syntax check failed');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[-1, 0], [-1, 1]]);
+          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });
@@ -219,11 +219,13 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/Missing file/);
+          expect(messages[0].excerpt).toEqual("foo:1: load-failure [Errno 2] No such file or directory: 'spec/fixtures/foo' (filenotfounderror)");
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });
@@ -252,11 +254,13 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/is unreadable or not a file/);
+          expect(messages[0].excerpt).toEqual('syntax-check: Ansible syntax check failed');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+unreadable_file\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });
@@ -286,9 +290,9 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('info');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/decrypted with ansible-vault/);
+          expect(messages[0].excerpt).toEqual('internal-error: Unexpected error code 1 from execution of: ansible-playbook --syntax-check spec/fixtures/vault_encrypted.yml');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+vault_encrypted\.yml$/);
         });
@@ -310,7 +314,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds the message', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
+          expect(messages.length).toEqual(2);
         })
       );
     });
@@ -321,11 +325,19 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[9, 0], [9, 1]]);
+          expect(messages[0].location.position).toEqual([[8, 0], [8, 1]]);
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Environment variables don\'t work as part of command');
+          expect(messages[0].excerpt).toEqual('yaml: too many blank lines (7 > 2) (empty-lines)');
+          expect(messages[1].location.file).toBeDefined();
+          expect(messages[1].location.file).toMatch(/.+include_with_issues\.yml$/);
+          expect(messages[1].location.position).toBeDefined();
+          expect(messages[1].location.position).toEqual([[9, 0], [9, 1]]);
+          expect(messages[1].severity).toBeDefined();
+          expect(messages[1].severity).toEqual('warning');
+          expect(messages[1].excerpt).toBeDefined();
+          expect(messages[1].excerpt).toEqual('inline-env-var: Command module does not accept setting environment variables inline');
         });
       });
     });
@@ -342,14 +354,38 @@ describe('The Ansible Lint provider for Linter', () => {
     });
   });
 
-  it('ignores an included file', () => {
-    waitsForPromise(() => {
-      const goodFile = path.join(__dirname, 'fixtures', 'include_with_issues.yml');
-      return atom.workspace.open(goodFile).then(editor =>
-        lint(editor).then(messages => {
-          expect(messages.length).toEqual(0);
+  describe('checks an included file that has an out bounds warning and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'include_with_issues.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
         })
       );
+    });
+
+    it('finds the message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the inaccurate message', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+include_with_issues\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[9, 2], [9, 3]]);
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual("syntax-check: 'command' is not a valid attribute for a Play");
+        });
+      });
     });
   });
 });

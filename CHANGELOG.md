@@ -4,6 +4,7 @@
 - now syntax errors just generic message from ansible-lint
 - for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
 - 5 is catching errors internally this package formerly had to catch; check on what is still needed when >= 5 (use stdout and stderr on cli to assist)
+- verify tests after doing above
 
 ### 1.7.1
 - Fixes for pathing when tasks not in a project.

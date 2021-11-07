@@ -186,7 +186,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('syntax-check: Ansible syntax check failed');
+          expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
@@ -221,7 +221,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual("foo:1: load-failure [Errno 2] No such file or directory: 'spec/fixtures/foo' (filenotfounderror)");
+          expect(messages[0].excerpt).toEqual("foo:1: load-failure [Errno 2] No such file or directory: 'foo' (filenotfounderror)");
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
           expect(messages[0].location.position).toBeDefined();
@@ -256,7 +256,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('syntax-check: Ansible syntax check failed');
+          expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+unreadable_file\.yml$/);
           expect(messages[0].location.position).toBeDefined();
@@ -292,7 +292,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('internal-error: Unexpected error code 1 from execution of: ansible-playbook --syntax-check spec/fixtures/vault_encrypted.yml');
+          expect(messages[0].excerpt).toEqual('internal-error: Unexpected error code 1 from execution of: ansible-playbook --syntax-check vault_encrypted.yml');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+vault_encrypted\.yml$/);
         });

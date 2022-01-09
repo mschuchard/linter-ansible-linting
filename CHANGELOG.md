@@ -1,8 +1,6 @@
-### 1.8.0 (Next)
+### 1.8.0
 - Minimum version of ansible-lint increased to 5.
 - Compensate for ansible-lint 5 partial switch to generic syntax error message.
-
-- for some reason never seems to enter helper.exec main lambda for bootstrap.yml in microk8s-vagrant
 
 ### 1.7.1
 - Fixes for pathing when tasks not in a project.

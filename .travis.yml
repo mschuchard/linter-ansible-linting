@@ -20,7 +20,7 @@ env:
   - ATOM_LINT_WITH_BUNDLED_NODE='true'
 
 os: linux
-python: 3.8
+python: 3.9
 
 matrix:
   include:
@@ -28,7 +28,6 @@ matrix:
 
 # execute tests
 install:
-- pip install "ansible-lint~=${VERSION}"
-- pip install ansible
+- pip3 install "ansible-lint~=${VERSION}" ansible
 before_script: ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/mschuchard/vagrant-boxes-docker-images/master/atom-build-package.sh | sh'

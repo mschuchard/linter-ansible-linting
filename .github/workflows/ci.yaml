@@ -1,0 +1,45 @@
+---
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  CI: true
+  PACKAGES: 'language-ansible'
+  VERSION: '5.0'
+
+jobs:
+  lint-and-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        channel: [stable]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - uses: UziTech/action-setup-atom@v2
+      with:
+        version: ${{ matrix.channel }}
+    - name: set up python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    - name: atom version
+      run: atom -v
+    - name: apm version
+      run: apm -v
+    - name: install dependencies
+      run: apm install && apm install ${PACKAGES} && apm clean
+    - name: lint source and spec
+      run: ./node_modules/.bin/eslint lib spec || true
+    - name: install some pre-requisite packages
+      run: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev
+    - name: install ansible-lint and ansible
+      run: pip3 install "ansible-lint~=${VERSION}" ansible
+    - name: run tests
+      run: atom --test spec

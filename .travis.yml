@@ -28,6 +28,6 @@ matrix:
 
 # execute tests
 install:
-- pip3 install "ansible-lint~=${VERSION}" ansible
+- pip install "ansible-lint~=${VERSION}" ansible
 before_script: ansible-lint --version
 script: 'curl -s https://raw.githubusercontent.com/mschuchard/vagrant-boxes-docker-images/master/atom-build-package.sh | sh'

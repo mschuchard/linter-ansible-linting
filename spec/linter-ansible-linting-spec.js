@@ -29,7 +29,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds all the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(14);
+          expect(messages.length).toEqual(12);
         })
       );
     });
@@ -184,7 +184,7 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
           expect(messages[0].location.file).toBeDefined();
@@ -254,7 +254,7 @@ describe('The Ansible Lint provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
           expect(messages[0].location.file).toBeDefined();
@@ -311,15 +311,15 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds the message', () => {
+    it('finds the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(2);
+          expect(messages.length).toEqual3);
         })
       );
     });
 
-    it('verifies the message in another file', () => {
+    it('verifies the messages in another file', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].location.file).toBeDefined();
@@ -337,7 +337,15 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toEqual('inline-env-var: Command module does not accept setting environment variables inline');
+          expect(messages[1].excerpt).toEqual('fqcn-builtins: Use FQCN for builtin actions.');
+          expect(messages[2].location.file).toBeDefined();
+          expect(messages[2].location.file).toMatch(/.+include_with_issues\.yml$/);
+          expect(messages[2].location.position).toBeDefined();
+          expect(messages[2].location.position).toEqual([[9, 0], [9, 1]]);
+          expect(messages[2].severity).toBeDefined();
+          expect(messages[2].severity).toEqual('warning');
+          expect(messages[2].excerpt).toBeDefined();
+          expect(messages[2].excerpt).toEqual('inline-env-var: Command module does not accept setting environment variables inline');
         });
       });
     });
@@ -381,7 +389,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.position).toBeDefined();
           expect(messages[0].location.position).toEqual([[9, 2], [9, 3]]);
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
           expect(messages[0].excerpt).toEqual("syntax-check: 'command' is not a valid attribute for a Play");
         });

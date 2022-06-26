@@ -37,8 +37,6 @@ jobs:
       run: apm install && apm install ${PACKAGES} && apm clean
     - name: lint source and spec
       run: ./node_modules/.bin/eslint lib spec || true
-    - name: install some pre-requisite packages
-      run: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev
     - name: install ansible-lint and ansible
       run: pip3 install "ansible-lint~=${VERSION}" ansible
     - name: run tests

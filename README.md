@@ -5,6 +5,16 @@
 
 Linter-Ansible-Linting aims to provide functional and robust Ansible-Lint linting functionality within Atom.
 
+### Atom Editor Sunset Updates
+
+`apm` was discontinued prior to the sunset by the Atom Editor team. Therefore, the installation instructions are now as follows:
+
+- Locate the Atom packages directory on your filesystem (normally at `<home>/.atom/packages`)
+- Retrieve the code from this repository either via `git` or the Code-->Download ZIP option in Github.
+- Place the directory containing the repository's code in the Atom packages directory.
+
+Additionally, this package is now in maintenance mode. All feature requests and bug reports in the Github repository issue tracker will receive a response, and possibly also be implemented. However, active development on this package has ceased.
+
 ### Installation
 Ansible-Lint >= 5.0.0 is required to be installed before using this. If you need support for >= 3.5.0 and < 5.0.0, then please downgrade to version 1.7.1 of this package. The Linter and Language-Ansible or Language-Ansible-Advanced Atom packages are also required. Note also that Ansible-Lint 5 is slower than previous releases, and more time is therefore needed to display linting information.
 

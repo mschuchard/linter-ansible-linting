@@ -1,3 +1,6 @@
+### 1.8.1 (Next)
+- Ansible-Lint >= 5.0 check updated for usage change.
+
 ### 1.8.0
 - Minimum version of ansible-lint increased to 5.
 - Compensate for ansible-lint 5 partial switch to generic syntax error message.

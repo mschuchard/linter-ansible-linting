@@ -314,7 +314,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual3);
+          expect(messages.length).toEqual(3);
         })
       );
     });

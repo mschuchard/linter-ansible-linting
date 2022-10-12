@@ -1,5 +1,6 @@
 ### 1.8.1 (Next)
 - Ansible-Lint >= 5.0 check updated for usage change.
+- Update syntax regexp parsing for new output format.
 
 ### 1.8.0
 - Minimum version of ansible-lint increased to 5.

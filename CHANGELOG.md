@@ -1,4 +1,4 @@
-### 1.8.1 (Next)
+### 1.8.1
 - Ansible-Lint >= 5.0 check updated for usage change.
 - Update syntax regexp parsing for new output format.
 

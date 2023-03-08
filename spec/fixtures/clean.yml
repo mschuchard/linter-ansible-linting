@@ -1,8 +1,9 @@
 # Clean with no errors or warnings.
 ---
-- hosts: whatever
+- name: Clean fixture
+  hosts: whatever
 
   tasks:
-  - name: hello world
-    debug:
+  - name: Hello world
+    ansible.builtin.debug:
       msg: 'Hello!'

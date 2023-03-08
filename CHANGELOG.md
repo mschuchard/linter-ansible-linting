@@ -1,8 +1,8 @@
 ### 1.8.2 (Next)
 - Circumvent Ansible-Lint 6 bug where success message is sent to stderr.
+- Update parsing and capturing for new Ansible-Lint 6 output format.
 
-circumvent new bug in ansible-lint that throws error after no issues
-output format changed again so line number no longer captured
+check if ansible-lint 6 changed syntax output format
 update fixtures for new standards
 
 ### 1.8.1

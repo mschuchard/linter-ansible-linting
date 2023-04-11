@@ -1,9 +1,9 @@
 ### 1.8.2 (Next)
 - Circumvent Ansible-Lint 6 bug where success message is sent to stderr.
-- Update parsing and capturing for new Ansible-Lint 6 output format.
+- Update parsing and capturing for new Ansible-Lint 6 output formats.
 
 update fixtures for new standards
-should capture subcategory info in [] also? (happens most of the time for lint; not for syntax)
+combine lintMatchesSyntax amd lintMatches? difference is possible col being third group
 
 ### 1.8.1
 - Ansible-Lint >= 5.0 check updated for usage change.

@@ -1,8 +1,6 @@
-### 1.8.2 (Next)
+### 1.8.2
 - Circumvent Ansible-Lint 6 bug where success message is sent to stderr.
 - Update parsing and capturing for new Ansible-Lint 6 output formats.
-
-update fixtures for new standards
 
 ### 1.8.1
 - Ansible-Lint >= 5.0 check updated for usage change.

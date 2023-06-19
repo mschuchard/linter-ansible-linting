@@ -14,7 +14,7 @@ on:
 env:
   CI: true
   PACKAGES: 'language-ansible'
-  VERSION: '5.0'
+  VERSION: '6.0'
 
 jobs:
   lint-and-test:

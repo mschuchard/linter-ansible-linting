@@ -6,7 +6,7 @@ jobs:
     environment:
       DISPLAY: ':99'
       APM_TEST_PACKAGES: 'language-ansible'
-      VERSION: '5.0'
+      VERSION: '6.0'
     working_directory: /tmp/project
     machine:
       image: ubuntu-2204:current

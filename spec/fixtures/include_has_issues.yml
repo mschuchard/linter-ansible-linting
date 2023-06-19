@@ -1,6 +1,7 @@
 # Include has a linter issue which should trigger and display for the include.
 ---
-- hosts: whatever
-
+- name: Include has issues
+  hosts: whatever
   tasks:
-    - include: include_with_issues.yml
+  - name: Include with issues
+    ansible.builtin.include_tasks: include_with_issues.yml

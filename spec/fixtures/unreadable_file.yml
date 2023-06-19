@@ -1,6 +1,7 @@
 # Attempt to include directory for error handling.
 ---
-- hosts: whatever
-
+- name: Unreadable file
+  hosts: whatever
   tasks:
-    - include: ../fixtures
+  - name: Fixtures is a directory
+    ansible.builtin.include_tasks: ../fixtures

@@ -1,6 +1,7 @@
 # Missing include for error handling.
 ---
-- hosts: whatever
-
+- name: Missing include
+  hosts: whatever
   tasks:
-    - include: foo
+    - name: No include named foo
+      ansible.builtin.include_tasks: foo

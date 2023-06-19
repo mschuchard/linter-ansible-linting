@@ -1,7 +1,7 @@
 # Syntax error for error handling.
 ---
-- hosts: whatever
-
+- name: Syntax error
+  hosts: whatever
   tasks:
-    - name: this should be fine too
-      file: state=touch ./wherever
+  - name: Super old school usage
+    file: state=touch ./wherever

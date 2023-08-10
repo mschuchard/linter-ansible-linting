@@ -1,3 +1,6 @@
+### 1.8.3 (next)
+- Workaround for noise from Ansible Lint 6 non-pep8 output.
+
 ### 1.8.2
 - Circumvent Ansible-Lint 6 bug where success message is sent to stderr.
 - Update parsing and capturing for new Ansible-Lint 6 output formats.

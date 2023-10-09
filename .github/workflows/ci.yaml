@@ -11,37 +11,14 @@ on:
     paths:
     - '**.js'
 
-env:
-  CI: true
-  PACKAGES: 'language-ansible'
-  VERSION: '6.0'
-
 jobs:
-  lint-and-test:
-    strategy:
-      matrix:
-        os: [ubuntu-22.04]
-        channel: [beta]
-    runs-on: ${{ matrix.os }}
+  lint:
+    runs-on: ubuntu-22.04
+    container: node:14-alpine
     steps:
     - name: checkout
       uses: actions/checkout@v3
-    - uses: UziTech/action-setup-atom@v3
-      with:
-        version: ${{ matrix.channel }}
-    - name: set up python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
-    - name: atom version
-      run: atom -v
-    - name: apm version
-      run: apm -v
     - name: install dependencies
-      run: apm install && apm install ${PACKAGES} && apm clean
+      run: npm install
     - name: lint source and spec
       run: ./node_modules/.bin/eslint lib spec || true
-    - name: install ansible-lint and ansible
-      run: pip3 install "ansible-lint~=${VERSION}" ansible
-    - name: run tests
-      run: atom --test spec

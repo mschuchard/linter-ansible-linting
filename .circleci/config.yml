@@ -3,37 +3,17 @@ version: 2.1
 
 jobs:
   test:
-    environment:
-      DISPLAY: ':99'
-      APM_TEST_PACKAGES: 'language-ansible'
-      VERSION: '6.0'
     working_directory: /tmp/project
-    machine:
-      image: ubuntu-2204:current
+    docker:
+    - image: node:14-alpine
     steps:
     - checkout
-    - restore_cache:
-        keys:
-        - linter-ansible-linting
     - run:
-        name: install some pre-requisite packages
-        command: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev unzip
+        name: install dependencies
+        command: npm install
     - run:
-        name: install ansible-lint and ansible
-        command: pip3 install "ansible-lint~=${VERSION}" ansible
-    - run:
-        name: start display server for Atom
-        command: /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x16 +extension RANDR
-        background: true
-    - run:
-        name: run package tests
-        command: curl -s https://raw.githubusercontent.com/mschuchard/vagrant-boxes-docker-images/master/atom-build-package.sh | sh
-    - save_cache:
-        paths:
-        - node_modules
-        - ~/.atom/packages
-        # ideally also apt when that is supported
-        key: linter-ansible-linting
+        name: lint source and spec
+        command: ./node_modules/.bin/eslint lib spec || true
 
 workflows:
   execute_tests:

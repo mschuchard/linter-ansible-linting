@@ -1,7 +1,7 @@
 {
   "name": "linter-ansible-linting",
   "main": "./lib/main.js",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "Ansible linting via ansible-lint",
   "repository": "https://github.com/mschuchard/linter-ansible-linting",
   "license": "MIT",

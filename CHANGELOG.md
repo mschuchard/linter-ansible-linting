@@ -1,4 +1,4 @@
-### 1.8.3 (next)
+### 1.8.3
 - Workaround for noise from Ansible Lint 6 non-pep8 output.
 - Workaround for change to versioning convention.
 

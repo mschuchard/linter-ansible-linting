@@ -29,7 +29,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds all the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(12);
+          expect(messages.length).toEqual(29);
         })
       );
     });
@@ -155,7 +155,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[5, 6], [5, 7]]);
+          expect(messages[0].location.position).toEqual([[5, 4], [5, 5]]);
         });
       });
     });
@@ -186,7 +186,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
+          expect(messages[0].excerpt).toEqual('load-failure[runtimeerror]: Failed to load YAML file: yaml_syntax.yml');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
@@ -221,7 +221,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual("foo:1: load-failure [Errno 2] No such file or directory: 'foo' (filenotfounderror)");
+          expect(messages[0].excerpt).toMatch(/foo:1: load-failure\[filenotfounderror\]: \[Errno 2\] No such file or directory: '.+spec\/fixtures\/foo'/);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
           expect(messages[0].location.position).toBeDefined();
@@ -329,7 +329,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('yaml: too many blank lines (7 > 2) (empty-lines)');
+          expect(messages[0].excerpt).toEqual('yaml[empty-lines]: Too many blank lines (7 > 2)');
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[1].location.position).toBeDefined();
@@ -337,7 +337,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toEqual('fqcn-builtins: Use FQCN for builtin actions.');
+          expect(messages[1].excerpt).toEqual('fqcn[action-core]: Use FQCN for builtin module actions (command).');
           expect(messages[2].location.file).toBeDefined();
           expect(messages[2].location.file).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[2].location.position).toBeDefined();
@@ -345,7 +345,7 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[2].severity).toBeDefined();
           expect(messages[2].severity).toEqual('warning');
           expect(messages[2].excerpt).toBeDefined();
-          expect(messages[2].excerpt).toEqual('inline-env-var: Command module does not accept setting environment variables inline');
+          expect(messages[2].excerpt).toEqual('inline-env-var: Command module does not accept setting environment variables inline.');
         });
       });
     });
@@ -387,11 +387,11 @@ describe('The Ansible Lint provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+include_with_issues\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[9, 2], [9, 3]]);
+          expect(messages[0].location.position).toEqual([[8, 0], [8, 1]]);
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual("syntax-check: 'command' is not a valid attribute for a Play");
+          expect(messages[0].excerpt).toEqual('yaml[empty-lines]: Too many blank lines (7 > 2)');
         });
       });
     });

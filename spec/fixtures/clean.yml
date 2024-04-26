@@ -4,6 +4,6 @@
   hosts: whatever
 
   tasks:
-  - name: Hello world
-    ansible.builtin.debug:
-      msg: 'Hello!'
+    - name: Hello world
+      ansible.builtin.debug:
+        msg: 'Hello!'

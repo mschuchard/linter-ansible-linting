@@ -242,25 +242,33 @@ describe('The Ansible Lint provider for Linter', () => {
       );
     });
 
-    it('finds the error message', () => {
+    it('finds the error messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
+          expect(messages.length).toEqual(2);
         })
       );
     });
 
-    it('verifies the message', () => {
+    it('verifies the messages', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Ansible syntax check failed for unknown reason; use syntax checker for more information.');
+          expect(messages[0].excerpt).toEqual('yaml[indentation]: Wrong indentation: expected at least 3');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+unreadable_file\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
+          expect(messages[0].location.position).toEqual([[5, 0], [5, 1]]);
+          expect(messages[1].severity).toBeDefined();
+          expect(messages[1].severity).toEqual('error');
+          expect(messages[1].excerpt).toBeDefined();
+          expect(messages[1].excerpt).toEqual("Loading . caused an AnsibleParserError exception: an error occurred while trying to read the file '/home/matt/git_repos/maintenance/linter-ansible-linting/spec/fixtures': [Errno 21] Is a directory: b'/home/matt/git_repos/maintenance/linter-ansible-linting/spec/fixtures'. [Errno 21] Is a directory: b'/home/matt/git_repos/maintenance/linter-ansible-linting/spec/fixtures', file was ignored.");
+          expect(messages[1].location.file).toBeDefined();
+          expect(messages[1].location.file).toMatch(/.+unreadable_file\.yml$/);
+          expect(messages[1].location.position).toBeDefined();
+          expect(messages[1].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });

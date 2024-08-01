@@ -29,7 +29,7 @@ describe('The Ansible Lint provider for Linter', () => {
     it('finds all the messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(29);
+          expect(messages.length).toEqual(32);
         })
       );
     });

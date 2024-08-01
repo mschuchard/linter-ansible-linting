@@ -11,11 +11,14 @@
     "ansible",
     "ansible-lint"
   ],
+  "scripts": {
+    "test": "pulsar --test spec"
+  },
   "bugs": {
     "url": "https://github.com/mschuchard/linter-ansible-linting/issues"
   },
   "engines": {
-    "atom": ">0.95.0"
+    "pulsar": ">=1.0.0"
   },
   "providedServices": {
     "linter": {
@@ -40,7 +43,7 @@
         "error",
         {
           "ignore": [
-            "atom"
+            "pulsar"
           ]
         }
       ]
@@ -50,7 +53,7 @@
       "node": true
     },
     "globals": {
-      "atom": false
+      "pulsar": false
     }
   }
 }

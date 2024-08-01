@@ -2,7 +2,6 @@
 ---
 - name: Clean fixture
   hosts: whatever
-
   tasks:
     - name: Hello world
       ansible.builtin.debug:

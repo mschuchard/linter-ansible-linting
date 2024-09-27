@@ -13,7 +13,7 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container: node:14-alpine
     steps:
     - name: checkout

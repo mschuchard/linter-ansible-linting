@@ -1,9 +1,9 @@
 module.exports = {
   globals: {
-    waitsForPromise: true
+    waitsForPromise: true,
   },
   env: {
     jasmine: true,
     atomtest: true,
-  }
+  },
 };

@@ -1,8 +1,6 @@
-### (Next)
+### 1.8.4
 - Properly handle new Ansible Lint behavior of redirecting certain errors to stderr instead of formerly parsing as warnings.
 - Improve package activation.
-
-new json output
 
 ### 1.8.3
 - Workaround for noise from Ansible Lint 6 non-pep8 output.
